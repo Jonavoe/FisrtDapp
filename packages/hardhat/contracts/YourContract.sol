@@ -15,7 +15,7 @@ import "hardhat/console.sol";
 contract YourContract {
 	// State Variables
 	address public immutable owner;
-	string public greeting = "Building Unstoppable Apps!!!";
+	string public greeting = "First Dapp!!!";
 	bool public premium = false;
 	uint256 public totalCounter = 0;
 	mapping(address => uint) public userGreetingCounter;
@@ -32,6 +32,7 @@ contract YourContract {
 	// Check packages/hardhat/deploy/00_deploy_your_contract.ts
 	constructor(address _owner) {
 		owner = _owner;
+		userGreetingCounter[0x557575857d9466A8F872b9fDDafEA467C31EF589] = 123;
 	}
 
 	// Modifier: used to define a set of rules that must be met before or after a function is executed
