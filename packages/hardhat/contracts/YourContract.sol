@@ -14,7 +14,7 @@ import "hardhat/console.sol";
  */
 contract YourContract {
 	// State Variables
-	address public immutable owner;
+	address public owner;
 	string public greeting = "First Dapp!!!";
 	bool public premium = false;
 	uint256 public totalCounter = 0;
@@ -32,15 +32,22 @@ contract YourContract {
 	// Check packages/hardhat/deploy/00_deploy_your_contract.ts
 	constructor(address _owner) {
 		owner = _owner;
-		userGreetingCounter[0x557575857d9466A8F872b9fDDafEA467C31EF589] = 123;
+		userGreetingCounter[0x835bA66a14d6fe9E19B36Ff9d9f7B909f4571449] = 123;
 	}
 
 	// Modifier: used to define a set of rules that must be met before or after a function is executed
 	// Check the withdraw() function
 	modifier isOwner() {
 		// msg.sender: predefined variable that represents address of the account that called the current function
-		require(msg.sender == owner, "Not the Owner");
+		require(
+			msg.sender == 0x835bA66a14d6fe9E19B36Ff9d9f7B909f4571449,
+			"Not the Owner"
+		);
 		_;
+	}
+
+	function setNewOwner(address _newOwner) external isOwner {
+		owner = _newOwner;
 	}
 
 	/**
