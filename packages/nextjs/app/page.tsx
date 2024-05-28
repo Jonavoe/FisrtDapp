@@ -1,30 +1,30 @@
 "use client";
 
-import { useState } from "react";
+// import { useState } from "react";
+// import { AddressInput } from "~~/components/scaffold-eth";
+// import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 import { NextPage } from "next";
-import { AddressInput } from "~~/components/scaffold-eth";
-import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 
 const Home: NextPage = () => {
-  const [address, setAddress] = useState("");
-  const { data: actualOwner } = useScaffoldReadContract({
-    contractName: "YourContract",
-    functionName: "owner",
-  });
+  // const [address, setAddress] = useState("");
+  // const { data: actualOwner } = useScaffoldReadContract({
+  //   contractName: "YourContract",
+  //   functionName: "owner",
+  // });
 
-  const { writeContractAsync: setNewOwner } = useScaffoldWriteContract("YourContract");
+  // const { writeContractAsync: setNewOwner } = useScaffoldWriteContract("YourContract");
 
-  const setNewOwnerHandler = async () => {
-    await setNewOwner({
-      functionName: "setNewOwner",
-      args: [address],
-    });
-  };
+  // const setNewOwnerHandler = async () => {
+  //   await setNewOwner({
+  //     functionName: "setNewOwner",
+  //     args: [address],
+  //   });
+  // };
 
   return (
     <>
       <div className="flex items-center flex-col flex-grow pt-10">
-        <div className="card w-[30rem] bg-base-100 shadow-xl">
+        {/* <div className="card w-[30rem] bg-base-100 shadow-xl">
           <div className="card-body">
             <h2 className="card-title">Set New Owner</h2>
             <label htmlFor="">Actual Owner</label>
@@ -44,7 +44,7 @@ const Home: NextPage = () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
