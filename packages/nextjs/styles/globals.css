@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Reddit+Mono:wght@200..900&display=swap");
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
@@ -5,6 +6,19 @@
 :root,
 [data-theme] {
   background: oklch(var(--b2));
+}
+
+.bubblegum-sans-regular {
+  font-family: "Bubblegum Sans";
+  font-weight: 400;
+  font-style: normal;
+}
+
+.reddit-mono {
+  font-family: "Reddit Mono";
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
 
 body {
