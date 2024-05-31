@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import logo from "../../public/iconoshit.png";
+import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import { formatEther } from "viem";
 import { useAccount } from "wagmi";
@@ -37,7 +38,12 @@ const Harry: NextPage = () => {
   return (
     <>
       <div className="flex justify-center items-start mt-8 p-10">
-        <div className="card w-[36rem] bg-base-100 shadow-xl">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="card w-[36rem] bg-base-100 shadow-xl"
+        >
           <div className="py-6 px-8 flex flex-col gap-4">
             <div className="w-full flex justify-center items-center gap-3">
               <h2 className="card-title">Buy HRY</h2>
@@ -67,7 +73,7 @@ const Harry: NextPage = () => {
               <button className="btn btn-primary w-full">Buy Now</button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </>
   );
